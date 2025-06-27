@@ -28,7 +28,11 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if step == 1:
         user_steps[user_id]["name"] = text
         user_steps[user_id]["step"] = 2
-        await update.message.reply_text("📞 Endi telefon raqamingizni yozing:")
+        await update: Update, context: ContextTypes.DEFAULT_TYPE):
+    contact_btn = KeyboardButton(text="📞 Telefon raqamni ulashish", request_contact=True)
+    keyboard = ReplyKeyboardMarkup([[contact_btn]], resize_keyboard=True, one_time_keyboard=True)
+    await update.message.reply_text("📱 Telefon raqamingizni ulashing:", reply_markup=keyboard)
+    return PHONE
     elif step == 2:
         user_steps[user_id]["phone"] = text
         user_steps[user_id]["step"] = 3
