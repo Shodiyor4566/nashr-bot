@@ -1,5 +1,4 @@
-from telegram import Updatefrom telegram import ReplyKeyboardMarkup, KeyboardButton
-
+from telegram import Update, ReplyKeyboardMarkup, KeyboardButton
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, ContextTypes, filters
 
 # Bot token va admin ID
